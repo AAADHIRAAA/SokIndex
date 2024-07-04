@@ -1,0 +1,438 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Collection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="filters">
+        <label for="filter-year">Year:</label>
+        <input type="text" id="filter-year" onkeydown="handleFilterKeydown(event)">
+        <label for="filter-author">Author:</label>
+        <input type="text" id="filter-author" onkeydown="handleFilterKeydown(event)">
+        <label for="filter-language">Language:</label>
+        <input type="text" id="filter-language" onkeydown="handleFilterKeydown(event)">
+        <label for="filter-publisher">Publisher:</label>
+        <input type="text" id="filter-publisher" onkeydown="handleFilterKeydown(event)">
+        <label for="filter-subject">Subject:</label>
+        <input type="text" id="filter-subject" onkeydown="handleFilterKeydown(event)">
+    </div>
+    <div id="books">
+
+        <div class="book" data-year="2013" data-author="" data-language="ori" data-publisher="N/A" data-subject="Odia">
+            <div class="thumbnail">
+                <img src="books\bigyan-diganta-2013-02\__ia_thumb.jpg" alt="ବିଜ୍ଞାନ ଦିଗନ୍ତ — ଫେବୃଆରୀ ୨୦୧୩ (୨୦ଶ ବର୍ଷ, ୨ୟ ସଂଖ୍ୟା)">
+            </div>
+            <div class="details">
+                <h3>ବିଜ୍ଞାନ ଦିଗନ୍ତ — ଫେବୃଆରୀ ୨୦୧୩ (୨୦ଶ ବର୍ଷ, ୨ୟ ସଂଖ୍ୟା)</h3>
+                <p>Author: </p>
+                <p>Publisher: N/A</p>
+                <p>Year: 2013</p>
+                <p>Language: ori</p>
+                <p>Subject: Odia</p>
+              
+            </div>
+        </div>
+        
+        <div class="book" data-year="1956" data-author="ಶ್ರೀ ಶ್ರೀಪತಿರಾವ್ ಪಲಿಮಾರ್ಕಾರ್" data-language="kan" data-publisher="ಒಂದಾಣೆ ಮಾಲೆ, ಮಂಗಳೂರು" data-subject="ಒಂದಾಣೆ ಮಾಲೆ;ಕನ್ನಡ ಸಾಹಿತ್ಯ">
+            <div class="thumbnail">
+                <img src="books\bedaginanadukoda0000sris\__ia_thumb.jpg" alt="ಬೆಡಗಿನ ನಾಡು ಕೊಡಗು ೮೩">
+            </div>
+            <div class="details">
+                <h3>ಬೆಡಗಿನ ನಾಡು ಕೊಡಗು ೮೩</h3>
+                <p>Author: ಶ್ರೀ ಶ್ರೀಪತಿರಾವ್ ಪಲಿಮಾರ್ಕಾರ್</p>
+                <p>Publisher: ಒಂದಾಣೆ ಮಾಲೆ, ಮಂಗಳೂರು</p>
+                <p>Year: 1956</p>
+                <p>Language: kan</p>
+                <p>Subject: ಒಂದಾಣೆ ಮಾಲೆ;ಕನ್ನಡ ಸಾಹಿತ್ಯ</p>
+              
+            </div>
+        </div>
+        
+        <div class="book" data-year="2013" data-author="ସରଳା ବେହେରା, ସରଳା ବେହେରା, ସରଳା ବେହେରା, ସରଳା ବେହେରା" data-language="Oriya" data-publisher="N/A" data-subject="Souvenir; Children’s literature; Satire; Accomplishment; Compilation;ସ୍ମରଣିକା; ଶିଶୁସାହିତ୍ୟ; ରମ୍ୟରଚନା; କୃତିତ୍ୱ; ସଙ୍କଳନ">
+            <div class="thumbnail">
+                <img src="books\basanta-baibhaba-2013\__ia_thumb.jpg" alt="ବସନ୍ତ ବୈଭବ">
+            </div>
+            <div class="details">
+                <h3>ବସନ୍ତ ବୈଭବ</h3>
+                <p>Author: ସରଳା ବେହେରା, ସରଳା ବେହେରା, ସରଳା ବେହେରା, ସରଳା ବେହେରା</p>
+                <p>Publisher: N/A</p>
+                <p>Year: 2013</p>
+                <p>Language: Oriya</p>
+                <p>Subject: Souvenir; Children’s literature; Satire; Accomplishment; Compilation;ସ୍ମରଣିକା; ଶିଶୁସାହିତ୍ୟ; ରମ୍ୟରଚନା; କୃତିତ୍ୱ; ସଙ୍କଳନ</p>
+              
+            </div>
+        </div>
+        
+        <div class="book" data-year="1967" data-author="Jaya Appasamy" data-language="eng" data-publisher="Lalit Kala Akademi" data-subject="N/A">
+            <div class="thumbnail">
+                <img src="books\bhabeshchandrasa0000jaya\__ia_thumb.jpg" alt="Bhabesh Chandra Sanyal">
+            </div>
+            <div class="details">
+                <h3>Bhabesh Chandra Sanyal</h3>
+                <p>Author: Jaya Appasamy</p>
+                <p>Publisher: Lalit Kala Akademi</p>
+                <p>Year: 1967</p>
+                <p>Language: eng</p>
+                <p>Subject: N/A</p>
+              
+            </div>
+        </div>
+        
+        <div class="book" data-year="2007" data-author="Prof.Dr.Olivinho Gomes" data-language="Kok" data-publisher="Konkani Sorospot Prakashan" data-subject="N/A">
+            <div class="thumbnail">
+                <img src="books\bhailibhonvddi0000prof\__ia_thumb.jpg" alt="Bhaili Bhonvddi">
+            </div>
+            <div class="details">
+                <h3>Bhaili Bhonvddi</h3>
+                <p>Author: Prof.Dr.Olivinho Gomes</p>
+                <p>Publisher: Konkani Sorospot Prakashan</p>
+                <p>Year: 2007</p>
+                <p>Language: Kok</p>
+                <p>Subject: N/A</p>
+              
+            </div>
+        </div>
+        
+        <div class="book" data-year="N/A" data-author="Dr. T. S. Rajagopal" data-language="kan" data-publisher="The Directorate Of Kannada And Culture" data-subject="N/A">
+            <div class="thumbnail">
+                <img src="books\bharatheeyasamsk0000drts\__ia_thumb.jpg" alt="Bharatheeya Samskritige Karnatakada Koduge">
+            </div>
+            <div class="details">
+                <h3>Bharatheeya Samskritige Karnatakada Koduge</h3>
+                <p>Author: Dr. T. S. Rajagopal</p>
+                <p>Publisher: The Directorate Of Kannada And Culture</p>
+                <p>Year: N/A</p>
+                <p>Language: kan</p>
+                <p>Subject: N/A</p>
+              
+            </div>
+        </div>
+        
+        <div class="book" data-year="1988" data-author="ಬಿ. ಎಚ್. ಶ್ರೀಧರ" data-language="kan" data-publisher="Shirasiya Rangasanga Mathu Kallaranga" data-subject="B. H. Shridhar Sanchaya;Kannada Literature;ಬಿ. ಎಚ್. ಶ್ರೀಧರ ಸಮಗ್ರ ಸಾಹಿತ್ಯ;ಬಿ. ಎಚ್. ಶ್ರೀಧರ ಸಂಚಯ;ಕನ್ನಡ ಸಾಹಿತ್ಯ">
+            <div class="thumbnail">
+                <img src="books\bharathiyamurthy0000bhsr\__ia_thumb.jpg" alt="ಭಾರತೀಯ ಮೂರ್ತಿ ಶಿಲ್ಪ">
+            </div>
+            <div class="details">
+                <h3>ಭಾರತೀಯ ಮೂರ್ತಿ ಶಿಲ್ಪ</h3>
+                <p>Author: ಬಿ. ಎಚ್. ಶ್ರೀಧರ</p>
+                <p>Publisher: Shirasiya Rangasanga Mathu Kallaranga</p>
+                <p>Year: 1988</p>
+                <p>Language: kan</p>
+                <p>Subject: B. H. Shridhar Sanchaya;Kannada Literature;ಬಿ. ಎಚ್. ಶ್ರೀಧರ ಸಮಗ್ರ ಸಾಹಿತ್ಯ;ಬಿ. ಎಚ್. ಶ್ರೀಧರ ಸಂಚಯ;ಕನ್ನಡ ಸಾಹಿತ್ಯ</p>
+              
+            </div>
+        </div>
+        
+        <div class="book" data-year="1979" data-author="ଉଦୟ ନାଥ ମିଶ୍ର, Udaya Natha Misra, Udaya Nath Mishra" data-language="ori" data-publisher="N/A" data-subject="ଭ୍ରମଣ କାହାଣୀ">
+            <div class="thumbnail">
+                <img src="books\bhata-o-bilata-1979\__ia_thumb.jpg" alt="ଭାତ ଓ ବିଲାତ">
+            </div>
+            <div class="details">
+                <h3>ଭାତ ଓ ବିଲାତ</h3>
+                <p>Author: ଉଦୟ ନାଥ ମିଶ୍ର, Udaya Natha Misra, Udaya Nath Mishra</p>
+                <p>Publisher: N/A</p>
+                <p>Year: 1979</p>
+                <p>Language: ori</p>
+                <p>Subject: ଭ୍ରମଣ କାହାଣୀ</p>
+              
+            </div>
+        </div>
+        
+        <div class="book" data-year="1976" data-author="ଶାନ୍ତନୁ କୁମାର ଆଚାର୍ଯ୍ୟ, Santanu Kumara Acharya, Shantanu Kumara Acharya" data-language="ori" data-publisher="N/A" data-subject="ଗଳ୍ପ">
+            <div class="thumbnail">
+                <img src="books\baga-bagichara-soudagara-1976\__ia_thumb.jpg" alt="ବାଗ ବଗିଚାର ସୌଦାଗର">
+            </div>
+            <div class="details">
+                <h3>ବାଗ ବଗିଚାର ସୌଦାଗର</h3>
+                <p>Author: ଶାନ୍ତନୁ କୁମାର ଆଚାର୍ଯ୍ୟ, Santanu Kumara Acharya, Shantanu Kumara Acharya</p>
+                <p>Publisher: N/A</p>
+                <p>Year: 1976</p>
+                <p>Language: ori</p>
+                <p>Subject: ଗଳ୍ପ</p>
+              
+            </div>
+        </div>
+        
+        <div class="book" data-year="1906" data-author="ଦୟାନିଧି ଦାସ, Dayanidhi Das, Dayanidhi Das" data-language="ori" data-publisher="N/A" data-subject="ପାଠ୍ୟପୁସ୍ତକ">
+            <div class="thumbnail">
+                <img src="books\bala-sikhya-1906\__ia_thumb.jpg" alt="ବାଳଶିକ୍ଷା">
+            </div>
+            <div class="details">
+                <h3>ବାଳଶିକ୍ଷା</h3>
+                <p>Author: ଦୟାନିଧି ଦାସ, Dayanidhi Das, Dayanidhi Das</p>
+                <p>Publisher: N/A</p>
+                <p>Year: 1906</p>
+                <p>Language: ori</p>
+                <p>Subject: ପାଠ୍ୟପୁସ୍ତକ</p>
+              
+            </div>
+        </div>
+        
+        <div class="book" data-year="1986" data-author="ಶ್ರೀ ಆ. ರಾ. ಸೇ. , ಶ್ರೀ ಶೇಷಗಿರಿ, ಶಿವಕುಮಾರ್" data-language="kan" data-publisher="ಅಪರಂಜಿ ಕಾರ್ಯಾಲಯ" data-subject="Magazine; Kannada Magazine; Aparanji Sanchaya; ಅಪರಂಜಿ ಸಂಚಯ;ಮಾಸಿಕ ಪತ್ರಿಕೆ; ಹಾಸ್ಯ ಪತ್ರಿಕೆ;ಕನ್ನಡ ಸಾಹಿತ್ಯ">
+            <div class="thumbnail">
+                <img src="books\aparanji-1986-08\__ia_thumb.jpg" alt="ಅಪರಂಜಿ ಸಂಚಿಕೆ 08-1986">
+            </div>
+            <div class="details">
+                <h3>ಅಪರಂಜಿ ಸಂಚಿಕೆ 08-1986</h3>
+                <p>Author: ಶ್ರೀ ಆ. ರಾ. ಸೇ. , ಶ್ರೀ ಶೇಷಗಿರಿ, ಶಿವಕುಮಾರ್</p>
+                <p>Publisher: ಅಪರಂಜಿ ಕಾರ್ಯಾಲಯ</p>
+                <p>Year: 1986</p>
+                <p>Language: kan</p>
+                <p>Subject: Magazine; Kannada Magazine; Aparanji Sanchaya; ಅಪರಂಜಿ ಸಂಚಯ;ಮಾಸಿಕ ಪತ್ರಿಕೆ; ಹಾಸ್ಯ ಪತ್ರಿಕೆ;ಕನ್ನಡ ಸಾಹಿತ್ಯ</p>
+              
+            </div>
+        </div>
+        
+        <div class="book" data-year="1992" data-author="ಶ್ರೀ ಆ. ರಾ. ಸೇ. , ಶ್ರೀ ಶೇಷಗಿರಿ, ಶಿವಕುಮಾರ್" data-language="kan" data-publisher="ಅಪರಂಜಿ ಕಾರ್ಯಾಲಯ" data-subject="Magazine; Kannada Magazine; Aparanji Sanchaya; ಅಪರಂಜಿ ಸಂಚಯ;ಮಾಸಿಕ ಪತ್ರಿಕೆ; ಹಾಸ್ಯ ಪತ್ರಿಕೆ;ಕನ್ನಡ ಸಾಹಿತ್ಯ">
+            <div class="thumbnail">
+                <img src="books\aparanji-1992-11\__ia_thumb.jpg" alt="ಅಪರಂಜಿ ಸಂಚಿಕೆ 11-1992">
+            </div>
+            <div class="details">
+                <h3>ಅಪರಂಜಿ ಸಂಚಿಕೆ 11-1992</h3>
+                <p>Author: ಶ್ರೀ ಆ. ರಾ. ಸೇ. , ಶ್ರೀ ಶೇಷಗಿರಿ, ಶಿವಕುಮಾರ್</p>
+                <p>Publisher: ಅಪರಂಜಿ ಕಾರ್ಯಾಲಯ</p>
+                <p>Year: 1992</p>
+                <p>Language: kan</p>
+                <p>Subject: Magazine; Kannada Magazine; Aparanji Sanchaya; ಅಪರಂಜಿ ಸಂಚಯ;ಮಾಸಿಕ ಪತ್ರಿಕೆ; ಹಾಸ್ಯ ಪತ್ರಿಕೆ;ಕನ್ನಡ ಸಾಹಿತ್ಯ</p>
+              
+            </div>
+        </div>
+        
+        <div class="book" data-year="1991" data-author="ಶ್ರೀ ಆ. ರಾ. ಸೇ. , ಶ್ರೀ ಶೇಷಗಿರಿ, ಶಿವಕುಮಾರ್" data-language="kan" data-publisher="ಅಪರಂಜಿ ಕಾರ್ಯಾಲಯ" data-subject="Magazine; Kannada Magazine; Aparanji Sanchaya; ಅಪರಂಜಿ ಸಂಚಯ;ಮಾಸಿಕ ಪತ್ರಿಕೆ; ಹಾಸ್ಯ ಪತ್ರಿಕೆ;ಕನ್ನಡ ಸಾಹಿತ್ಯ">
+            <div class="thumbnail">
+                <img src="books\aparanji-1991-04\__ia_thumb.jpg" alt="ಅಪರಂಜಿ ಸಂಚಿಕೆ 04-1991">
+            </div>
+            <div class="details">
+                <h3>ಅಪರಂಜಿ ಸಂಚಿಕೆ 04-1991</h3>
+                <p>Author: ಶ್ರೀ ಆ. ರಾ. ಸೇ. , ಶ್ರೀ ಶೇಷಗಿರಿ, ಶಿವಕುಮಾರ್</p>
+                <p>Publisher: ಅಪರಂಜಿ ಕಾರ್ಯಾಲಯ</p>
+                <p>Year: 1991</p>
+                <p>Language: kan</p>
+                <p>Subject: Magazine; Kannada Magazine; Aparanji Sanchaya; ಅಪರಂಜಿ ಸಂಚಯ;ಮಾಸಿಕ ಪತ್ರಿಕೆ; ಹಾಸ್ಯ ಪತ್ರಿಕೆ;ಕನ್ನಡ ಸಾಹಿತ್ಯ</p>
+              
+            </div>
+        </div>
+        
+        <div class="book" data-year="1995" data-author="ಶ್ರೀ ಆ. ರಾ. ಸೇ. , ಶ್ರೀ ಶೇಷಗಿರಿ, ಶಿವಕುಮಾರ್" data-language="kan" data-publisher="ಅಪರಂಜಿ ಕಾರ್ಯಾಲಯ" data-subject="Magazine; Kannada Magazine; Aparanji Sanchaya; ಅಪರಂಜಿ ಸಂಚಯ;ಮಾಸಿಕ ಪತ್ರಿಕೆ; ಹಾಸ್ಯ ಪತ್ರಿಕೆ;ಕನ್ನಡ ಸಾಹಿತ್ಯ">
+            <div class="thumbnail">
+                <img src="books\aparanji-1995-08\__ia_thumb.jpg" alt="ಅಪರಂಜಿ ಸಂಚಿಕೆ 08-1995">
+            </div>
+            <div class="details">
+                <h3>ಅಪರಂಜಿ ಸಂಚಿಕೆ 08-1995</h3>
+                <p>Author: ಶ್ರೀ ಆ. ರಾ. ಸೇ. , ಶ್ರೀ ಶೇಷಗಿರಿ, ಶಿವಕುಮಾರ್</p>
+                <p>Publisher: ಅಪರಂಜಿ ಕಾರ್ಯಾಲಯ</p>
+                <p>Year: 1995</p>
+                <p>Language: kan</p>
+                <p>Subject: Magazine; Kannada Magazine; Aparanji Sanchaya; ಅಪರಂಜಿ ಸಂಚಯ;ಮಾಸಿಕ ಪತ್ರಿಕೆ; ಹಾಸ್ಯ ಪತ್ರಿಕೆ;ಕನ್ನಡ ಸಾಹಿತ್ಯ</p>
+              
+            </div>
+        </div>
+        
+        <div class="book" data-year="1998" data-author="ಶ್ರೀ ಆ. ರಾ. ಸೇ. , ಶ್ರೀ ಶೇಷಗಿರಿ, ಶಿವಕುಮಾರ್" data-language="kan" data-publisher="ಅಪರಂಜಿ ಕಾರ್ಯಾಲಯ" data-subject="Magazine; Kannada Magazine; Aparanji Sanchaya; ಅಪರಂಜಿ ಸಂಚಯ;ಮಾಸಿಕ ಪತ್ರಿಕೆ; ಹಾಸ್ಯ ಪತ್ರಿಕೆ;ಕನ್ನಡ ಸಾಹಿತ್ಯ">
+            <div class="thumbnail">
+                <img src="books\aparanji-1998-01\__ia_thumb.jpg" alt="ಅಪರಂಜಿ ಸಂಚಿಕೆ 01-1998">
+            </div>
+            <div class="details">
+                <h3>ಅಪರಂಜಿ ಸಂಚಿಕೆ 01-1998</h3>
+                <p>Author: ಶ್ರೀ ಆ. ರಾ. ಸೇ. , ಶ್ರೀ ಶೇಷಗಿರಿ, ಶಿವಕುಮಾರ್</p>
+                <p>Publisher: ಅಪರಂಜಿ ಕಾರ್ಯಾಲಯ</p>
+                <p>Year: 1998</p>
+                <p>Language: kan</p>
+                <p>Subject: Magazine; Kannada Magazine; Aparanji Sanchaya; ಅಪರಂಜಿ ಸಂಚಯ;ಮಾಸಿಕ ಪತ್ರಿಕೆ; ಹಾಸ್ಯ ಪತ್ರಿಕೆ;ಕನ್ನಡ ಸಾಹಿತ್ಯ</p>
+              
+            </div>
+        </div>
+        
+        <div class="book" data-year="2002" data-author="ಶ್ರೀ ಆ. ರಾ. ಸೇ. , ಶ್ರೀ ಶೇಷಗಿರಿ, ಶಿವಕುಮಾರ್" data-language="kan" data-publisher="ಅಪರಂಜಿ ಕಾರ್ಯಾಲಯ" data-subject="Magazine; Kannada Magazine; Aparanji Sanchaya; ಅಪರಂಜಿ ಸಂಚಯ;ಮಾಸಿಕ ಪತ್ರಿಕೆ; ಹಾಸ್ಯ ಪತ್ರಿಕೆ;ಕನ್ನಡ ಸಾಹಿತ್ಯ">
+            <div class="thumbnail">
+                <img src="books\aparanji-2002-11\__ia_thumb.jpg" alt="ಅಪರಂಜಿ ಸಂಚಿಕೆ 11-2002">
+            </div>
+            <div class="details">
+                <h3>ಅಪರಂಜಿ ಸಂಚಿಕೆ 11-2002</h3>
+                <p>Author: ಶ್ರೀ ಆ. ರಾ. ಸೇ. , ಶ್ರೀ ಶೇಷಗಿರಿ, ಶಿವಕುಮಾರ್</p>
+                <p>Publisher: ಅಪರಂಜಿ ಕಾರ್ಯಾಲಯ</p>
+                <p>Year: 2002</p>
+                <p>Language: kan</p>
+                <p>Subject: Magazine; Kannada Magazine; Aparanji Sanchaya; ಅಪರಂಜಿ ಸಂಚಯ;ಮಾಸಿಕ ಪತ್ರಿಕೆ; ಹಾಸ್ಯ ಪತ್ರಿಕೆ;ಕನ್ನಡ ಸಾಹಿತ್ಯ</p>
+              
+            </div>
+        </div>
+        
+        <div class="book" data-year="2003" data-author="ಶ್ರೀ ಆ. ರಾ. ಸೇ. , ಶ್ರೀ ಶೇಷಗಿರಿ, ಶಿವಕುಮಾರ್" data-language="kan" data-publisher="ಅಪರಂಜಿ ಕಾರ್ಯಾಲಯ" data-subject="Magazine; Kannada Magazine; Aparanji Sanchaya; ಅಪರಂಜಿ ಸಂಚಯ;ಮಾಸಿಕ ಪತ್ರಿಕೆ; ಹಾಸ್ಯ ಪತ್ರಿಕೆ;ಕನ್ನಡ ಸಾಹಿತ್ಯ">
+            <div class="thumbnail">
+                <img src="books\aparanji-2003-08\__ia_thumb.jpg" alt="ಅಪರಂಜಿ ಸಂಚಿಕೆ 08-2003">
+            </div>
+            <div class="details">
+                <h3>ಅಪರಂಜಿ ಸಂಚಿಕೆ 08-2003</h3>
+                <p>Author: ಶ್ರೀ ಆ. ರಾ. ಸೇ. , ಶ್ರೀ ಶೇಷಗಿರಿ, ಶಿವಕುಮಾರ್</p>
+                <p>Publisher: ಅಪರಂಜಿ ಕಾರ್ಯಾಲಯ</p>
+                <p>Year: 2003</p>
+                <p>Language: kan</p>
+                <p>Subject: Magazine; Kannada Magazine; Aparanji Sanchaya; ಅಪರಂಜಿ ಸಂಚಯ;ಮಾಸಿಕ ಪತ್ರಿಕೆ; ಹಾಸ್ಯ ಪತ್ರಿಕೆ;ಕನ್ನಡ ಸಾಹಿತ್ಯ</p>
+              
+            </div>
+        </div>
+        
+        <div class="book" data-year="1997" data-author="ಶ್ರೀ ಆ. ರಾ. ಸೇ. , ಶ್ರೀ ಶೇಷಗಿರಿ, ಶಿವಕುಮಾರ್" data-language="kan" data-publisher="ಅಪರಂಜಿ ಕಾರ್ಯಾಲಯ" data-subject="Magazine; Kannada Magazine; Aparanji Sanchaya; ಅಪರಂಜಿ ಸಂಚಯ;ಮಾಸಿಕ ಪತ್ರಿಕೆ; ಹಾಸ್ಯ ಪತ್ರಿಕೆ;ಕನ್ನಡ ಸಾಹಿತ್ಯ">
+            <div class="thumbnail">
+                <img src="books\aparanji-1997-01\__ia_thumb.jpg" alt="ಅಪರಂಜಿ ಸಂಚಿಕೆ 01-1997">
+            </div>
+            <div class="details">
+                <h3>ಅಪರಂಜಿ ಸಂಚಿಕೆ 01-1997</h3>
+                <p>Author: ಶ್ರೀ ಆ. ರಾ. ಸೇ. , ಶ್ರೀ ಶೇಷಗಿರಿ, ಶಿವಕುಮಾರ್</p>
+                <p>Publisher: ಅಪರಂಜಿ ಕಾರ್ಯಾಲಯ</p>
+                <p>Year: 1997</p>
+                <p>Language: kan</p>
+                <p>Subject: Magazine; Kannada Magazine; Aparanji Sanchaya; ಅಪರಂಜಿ ಸಂಚಯ;ಮಾಸಿಕ ಪತ್ರಿಕೆ; ಹಾಸ್ಯ ಪತ್ರಿಕೆ;ಕನ್ನಡ ಸಾಹಿತ್ಯ</p>
+              
+            </div>
+        </div>
+        
+        <div class="book" data-year="2004" data-author="ಶ್ರೀ ಆ. ರಾ. ಸೇ. , ಶ್ರೀ ಶೇಷಗಿರಿ, ಶಿವಕುಮಾರ್" data-language="kan" data-publisher="ಅಪರಂಜಿ ಕಾರ್ಯಾಲಯ" data-subject="Magazine; Kannada Magazine; Aparanji Sanchaya; ಅಪರಂಜಿ ಸಂಚಯ;ಮಾಸಿಕ ಪತ್ರಿಕೆ; ಹಾಸ್ಯ ಪತ್ರಿಕೆ;ಕನ್ನಡ ಸಾಹಿತ್ಯ">
+            <div class="thumbnail">
+                <img src="books\aparanji-2004-08\__ia_thumb.jpg" alt="ಅಪರಂಜಿ ಸಂಚಿಕೆ 08-2004">
+            </div>
+            <div class="details">
+                <h3>ಅಪರಂಜಿ ಸಂಚಿಕೆ 08-2004</h3>
+                <p>Author: ಶ್ರೀ ಆ. ರಾ. ಸೇ. , ಶ್ರೀ ಶೇಷಗಿರಿ, ಶಿವಕುಮಾರ್</p>
+                <p>Publisher: ಅಪರಂಜಿ ಕಾರ್ಯಾಲಯ</p>
+                <p>Year: 2004</p>
+                <p>Language: kan</p>
+                <p>Subject: Magazine; Kannada Magazine; Aparanji Sanchaya; ಅಪರಂಜಿ ಸಂಚಯ;ಮಾಸಿಕ ಪತ್ರಿಕೆ; ಹಾಸ್ಯ ಪತ್ರಿಕೆ;ಕನ್ನಡ ಸಾಹಿತ್ಯ</p>
+              
+            </div>
+        </div>
+        
+        <div class="book" data-year="1969" data-author="ಶ್ರೀನಿವಾಸ್" data-language="kan" data-publisher="ಜೀವನ ಕರ್ಯಾಲಯ ಟ್ರಸ್ಟ್" data-subject="ಕನ್ನಡ ಸಾಹಿತ್ಯ; ಬಿ.ಎಂ.ಶ್ರೀ ಸಂಚಯ">
+            <div class="thumbnail">
+                <img src="books\bmshri.sankranthi0000srin.8k8.421.san\__ia_thumb.jpg" alt="ಸಂಕ್ರಾಂತಿ">
+            </div>
+            <div class="details">
+                <h3>ಸಂಕ್ರಾಂತಿ</h3>
+                <p>Author: ಶ್ರೀನಿವಾಸ್</p>
+                <p>Publisher: ಜೀವನ ಕರ್ಯಾಲಯ ಟ್ರಸ್ಟ್</p>
+                <p>Year: 1969</p>
+                <p>Language: kan</p>
+                <p>Subject: ಕನ್ನಡ ಸಾಹಿತ್ಯ; ಬಿ.ಎಂ.ಶ್ರೀ ಸಂಚಯ</p>
+              
+            </div>
+        </div>
+        
+        <div class="book" data-year="1985" data-author="ಶ್ರೀ ಎಸ್‌. ಶಿವಣ್ಣ" data-language="Kan" data-publisher="ವೀರಶೈವ ಅಧ್ಯಯನ ಸಂಸ್ಕೆ " data-subject="ಕನ್ನಡ ಸಾಹಿತ್ಯ; ಬಿ.ಎಂ.ಶ್ರೀ ಸಂಚಯ">
+            <div class="thumbnail">
+                <img src="books\bmshri.srijagadguruthot0000sris_i6s3\__ia_thumb.jpg" alt="ಶ್ರೀ ಜಗದ್ಗುರು ಶೋಂಟಿದಾರ್ಯ ಸಂಸ್ಥಾನ ಮಠದ ಹಸ್ತಪ್ರತಿಸೂಚಿ ಸಂಪುಟ -1">
+            </div>
+            <div class="details">
+                <h3>ಶ್ರೀ ಜಗದ್ಗುರು ಶೋಂಟಿದಾರ್ಯ ಸಂಸ್ಥಾನ ಮಠದ ಹಸ್ತಪ್ರತಿಸೂಚಿ ಸಂಪುಟ -1</h3>
+                <p>Author: ಶ್ರೀ ಎಸ್‌. ಶಿವಣ್ಣ</p>
+                <p>Publisher: ವೀರಶೈವ ಅಧ್ಯಯನ ಸಂಸ್ಕೆ </p>
+                <p>Year: 1985</p>
+                <p>Language: Kan</p>
+                <p>Subject: ಕನ್ನಡ ಸಾಹಿತ್ಯ; ಬಿ.ಎಂ.ಶ್ರೀ ಸಂಚಯ</p>
+              
+            </div>
+        </div>
+        
+        <div class="book" data-year="N/A" data-author="H. Gangadharashastri" data-language="Kan" data-publisher="Shri Panchacharya Electric Press" data-subject="N/A">
+            <div class="thumbnail">
+                <img src="books\bmshri.shrishivarahasya0000hgansamputa-18\__ia_thumb.jpg" alt="Shri Shivarahasya Samputa-18">
+            </div>
+            <div class="details">
+                <h3>Shri Shivarahasya Samputa-18</h3>
+                <p>Author: H. Gangadharashastri</p>
+                <p>Publisher: Shri Panchacharya Electric Press</p>
+                <p>Year: N/A</p>
+                <p>Language: Kan</p>
+                <p>Subject: N/A</p>
+              
+            </div>
+        </div>
+        
+        <div class="book" data-year="N/A" data-author="" data-language="english" data-publisher="modern review" data-subject="N/A">
+            <div class="thumbnail">
+                <img src="books\bmshri.universityunionm0000unse\__ia_thumb.jpg" alt="The university union magazine mysore">
+            </div>
+            <div class="details">
+                <h3>The university union magazine mysore</h3>
+                <p>Author: </p>
+                <p>Publisher: modern review</p>
+                <p>Year: N/A</p>
+                <p>Language: english</p>
+                <p>Subject: N/A</p>
+              
+            </div>
+        </div>
+        
+        <div class="book" data-year="N/A" data-author="Panditha devashikhaamani " data-language="Kan" data-publisher="R Venkateshwara com" data-subject="N/A">
+            <div class="thumbnail">
+                <img src="books\bmshri.srimadramayanavu0000pand\__ia_thumb.jpg" alt="Sri madra mayanavu sundara kaandavu">
+            </div>
+            <div class="details">
+                <h3>Sri madra mayanavu sundara kaandavu</h3>
+                <p>Author: Panditha devashikhaamani </p>
+                <p>Publisher: R Venkateshwara com</p>
+                <p>Year: N/A</p>
+                <p>Language: Kan</p>
+                <p>Subject: N/A</p>
+              
+            </div>
+        </div>
+        
+        <div class="book" data-year="N/A" data-author="Sri Jagannathdasaraya" data-language="Kan" data-publisher="Sri Harivittala Prakashana" data-subject="N/A">
+            <div class="thumbnail">
+                <img src="books\bmshri.srimadhwarikatha0000srijsamputa-2\__ia_thumb.jpg" alt="Srimadhwarikathamritsara Samputa-2">
+            </div>
+            <div class="details">
+                <h3>Srimadhwarikathamritsara Samputa-2</h3>
+                <p>Author: Sri Jagannathdasaraya</p>
+                <p>Publisher: Sri Harivittala Prakashana</p>
+                <p>Year: N/A</p>
+                <p>Language: Kan</p>
+                <p>Subject: N/A</p>
+              
+            </div>
+        </div>
+        
+    </div>
+    <script>
+        function handleFilterKeydown(event) {
+            if (event.key === "Enter") {
+                filterBooks();
+            }
+        }
+
+        function filterBooks() {
+            const year = document.getElementById('filter-year').value.toLowerCase();
+            const author = document.getElementById('filter-author').value.toLowerCase();
+            const language = document.getElementById('filter-language').value.toLowerCase();
+            const publisher = document.getElementById('filter-publisher').value.toLowerCase();
+            const subject = document.getElementById('filter-subject').value.toLowerCase();
+
+            const books = document.querySelectorAll('.book');
+            books.forEach(book => {
+                const bookYear = book.dataset.year.toLowerCase();
+                const bookAuthor = book.dataset.author.toLowerCase();
+                const bookLanguage = book.dataset.language.toLowerCase();
+                const bookPublisher = book.dataset.publisher.toLowerCase();
+                const bookSubject = book.dataset.subject.toLowerCase();
+
+                if ((year === '' || bookYear.includes(year)) &&
+                    (author === '' || bookAuthor.includes(author)) &&
+                    (language === '' || bookLanguage.includes(language)) &&
+                    (publisher === '' || bookPublisher.includes(publisher)) &&
+                    (subject === '' || bookSubject.includes(subject))) {
+                    book.style.display = 'flex';
+                } else {
+                    book.style.display = 'none';
+                }
+            });
+        }
+    </script>
+    <footer class="footer">
+        <p class="footer-text">&copy; 2013-2024 ಕನ್ನಡ ಸಂಚಯ | ಸಾಹಿತ್ಯ ಸಂಶೋಧನೆ ಹಾಗೂ ಅಧ್ಯಯನ ವೇದಿಕೆ</p>
+    </footer>
+</body>
+</html>
