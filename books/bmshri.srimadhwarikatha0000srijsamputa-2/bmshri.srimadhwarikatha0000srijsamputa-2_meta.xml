@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <identifier>bmshri.srimadhwarikatha0000srijsamputa-2</identifier>
+  <camera>USB PTP Class Camera</camera>
+  <collection>ServantsOfKnowledge</collection>
+  <collection>JaiGyan</collection>
+  <collection_set>ServantsOfKnowledge</collection_set>
+  <contributor>Servants of Knowledge</contributor>
+  <creator>Sri Jagannathdasaraya</creator>
+  <date>1977</date>
+  <language>Kan</language>
+  <mediatype>texts</mediatype>
+  <operator>carl+sok_maa@media.org</operator>
+  <page-progression>lr</page-progression>
+  <partner>Kahle/Austin - Indian Academy of Sciences</partner>
+  <publisher>Sri Harivittala Prakashana</publisher>
+  <rcs_key>24685</rcs_key>
+  <repub_state>19</repub_state>
+  <scanner>ttscribe7.sok.archive.org</scanner>
+  <scanningcenter>tt_sok</scanningcenter>
+  <title>Srimadhwarikathamritsara Samputa-2</title>
+  <tts_version>5.7-initial-22-g1996d085</tts_version>
+  <uploader>ttscribe7.sok@archive.org</uploader>
+  <publicdate>2023-05-26 05:46:33</publicdate>
+  <imagecount>450</imagecount>
+  <scandate>20230526114223</scandate>
+  <ppi>360</ppi>
+  <republisher_operator>associate-heidee-jalon@archive.org</republisher_operator>
+  <republisher_date>20230527051734</republisher_date>
+  <republisher_time>321</republisher_time>
+  <foldoutcount>0</foldoutcount>
+  <identifier-access>http://archive.org/details/bmshri.srimadhwarikatha0000srijsamputa-2</identifier-access>
+  <identifier-ark>ark:/13960/s28ns5t4j89</identifier-ark>
+  <ocr>tesseract 5.3.0-3-g9920</ocr>
+  <ocr_parameters>-l kan+Kannada</ocr_parameters>
+  <ocr_module_version>0.0.21</ocr_module_version>
+  <ocr_detected_script>Kannada</ocr_detected_script>
+  <ocr_detected_script_conf>0.9745</ocr_detected_script_conf>
+  <ocr_detected_lang>kn</ocr_detected_lang>
+  <ocr_detected_lang_conf>1.0000</ocr_detected_lang_conf>
+  <page_number_confidence>92.19</page_number_confidence>
+  <pdf_module_version>0.0.22</pdf_module_version>
+  <addeddate>2023-05-27 01:33:00</addeddate>
+  <scanfee>0;4;4</scanfee>
+  <invoice>1661</invoice>
+  <sponsordate>20230531</sponsordate>
+</metadata>

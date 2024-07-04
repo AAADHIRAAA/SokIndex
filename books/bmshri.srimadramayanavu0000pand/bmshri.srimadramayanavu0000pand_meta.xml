@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <identifier>bmshri.srimadramayanavu0000pand</identifier>
+  <camera>USB PTP Class Camera</camera>
+  <collection>ServantsOfKnowledge</collection>
+  <collection>JaiGyan</collection>
+  <collection_set>ServantsOfKnowledge</collection_set>
+  <contributor>Servants of Knowledge</contributor>
+  <creator>Panditha devashikhaamani </creator>
+  <date>1914</date>
+  <language>Kan</language>
+  <mediatype>texts</mediatype>
+  <operator>carl+sok_maa@media.org</operator>
+  <page-progression>lr</page-progression>
+  <partner>Kahle/Austin - Indian Academy of Sciences</partner>
+  <publisher>R Venkateshwara com</publisher>
+  <rcs_key>24685</rcs_key>
+  <repub_state>19</repub_state>
+  <scanner>ttscribe7.sok.archive.org</scanner>
+  <scanningcenter>tt_sok</scanningcenter>
+  <title>Sri madra mayanavu sundara kaandavu</title>
+  <tts_version>5.7-initial-24-gde4a12cb</tts_version>
+  <uploader>ttscribe7.sok@archive.org</uploader>
+  <publicdate>2023-06-16 05:47:27</publicdate>
+  <imagecount>438</imagecount>
+  <scandate>20230616112744</scandate>
+  <ppi>360</ppi>
+  <republisher_operator>associate-heidee-jalon@archive.org</republisher_operator>
+  <republisher_date>20230616224537</republisher_date>
+  <republisher_time>721</republisher_time>
+  <foldoutcount>0</foldoutcount>
+  <identifier-access>http://archive.org/details/bmshri.srimadramayanavu0000pand</identifier-access>
+  <identifier-ark>ark:/13960/s2qc2xmd6x6</identifier-ark>
+  <ocr>tesseract 5.3.0-3-g9920</ocr>
+  <ocr_parameters>-l kan+Kannada</ocr_parameters>
+  <ocr_module_version>0.0.21</ocr_module_version>
+  <ocr_detected_script>Kannada</ocr_detected_script>
+  <ocr_detected_script_conf>0.9751</ocr_detected_script_conf>
+  <ocr_detected_lang>kn</ocr_detected_lang>
+  <ocr_detected_lang_conf>1.0000</ocr_detected_lang_conf>
+  <pdf_module_version>0.0.22</pdf_module_version>
+  <addeddate>2023-06-16 19:44:56</addeddate>
+  <scanfee>0;4;4</scanfee>
+  <invoice>1661</invoice>
+  <sponsordate>20230630</sponsordate>
+</metadata>
