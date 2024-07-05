@@ -1,154 +1,143 @@
-import os
 import json
-from xml.etree import ElementTree as ET
 
-# Load book identifiers from JSON file
-with open('book_identifiers.json', 'r') as json_file:
-    book_identifiers = json.load(json_file)
+def generate_html_from_json(json_file, output_html):
+    with open(json_file, 'r', encoding='utf-8') as f:
+        books = json.load(f)
 
-book_identifiers = book_identifiers[:25]
-# Base directory for books
-base_dir = "books"
+    books_json = json.dumps(books, ensure_ascii=False, indent=4)
 
-# Function to generate HTML content for each book
-def generate_book_html(folder):
-    meta_file_path = os.path.join(base_dir, folder, f"{folder}_meta.xml")
-    thumb_path = os.path.join(base_dir, folder, "__ia_thumb.jpg")
-    pdf_path = os.path.join(base_dir, folder, f"{folder}.pdf")
-
-    # Debugging print statements
-    # print(f"Processing folder: {folder}")
-    # print(f"Expected Meta file path: {meta_file_path}")
-    # print(f"Expected Thumbnail path: {thumb_path}")
-    # print(f"Expected PDF path: {pdf_path}")
-
-    # Check if the directory exists
-    dir_path = os.path.join(base_dir, folder)
-    if not os.path.isdir(dir_path):
-        print(f"Directory not found: {dir_path}")
-        return ""
-
-    # List all files in the directory for debugging
-    # print(f"Files in directory {dir_path}:")
-    # for file in os.listdir(dir_path):
-    #     print(f"- {file}")
-
-    # Check if meta file exists
-    if not os.path.exists(meta_file_path):
-        print(f"Meta file not found: {meta_file_path}")
-        return ""
-
-    try:
-        # Load and parse XML metadata
-        with open(meta_file_path, 'r', encoding='utf-8') as file:
-            xml_content = file.read()
-
-        # Parse the XML content
-        xml_tree = ET.ElementTree(ET.fromstring(xml_content))
-        title = xml_tree.findtext('title', 'N/A')
-        creators = [creator.text for creator in xml_tree.findall('creator')]
-        year = xml_tree.findtext('year', 'N/A')
-        language = xml_tree.findtext('language', 'N/A')
-        subject = xml_tree.findtext('subject', 'N/A')
-        publisher = xml_tree.findtext('publisher', 'N/A')
-
-        book_html = f'''
-        <div class="book" data-year="{year}" data-author="{', '.join(creators)}" data-language="{language}" data-publisher="{publisher}" data-subject="{subject}">
-            <div class="thumbnail">
-                <img src="{thumb_path}" alt="{title}">
-            </div>
-            <div class="details">
-                <h3>{title}</h3>
-                <p>Author: {', '.join(creators)}</p>
-                <p>Publisher: {publisher}</p>
-                <p>Year: {year}</p>
-                <p>Language: {language}</p>
-                <p>Subject: {subject}</p>
-              
-            </div>
+    html_content = f"""
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Book Display</title>
+        <style>
+            .filter-container {{
+                float: left;
+                width: 20%;
+                padding: 10px;
+            }}
+            .books-container {{
+                float: left;
+                width: 75%;
+                padding: 10px;
+            }}
+            .book {{
+                border: 1px solid #ddd;
+                margin-bottom: 10px;
+                padding: 10px;
+                display: flex;
+            }}
+            .thumbnail img {{
+                max-width: 100px;
+                margin-right: 10px;
+            }}
+            .details {{
+                flex: 1;
+            }}
+            .clear {{
+                clear: both;
+            }}
+        </style>
+    </head>
+    <body>
+        <div class="filter-container">
+            <h2>Filters</h2>
+            <label for="filter-year">Year:</label>
+            <input type="text" id="filter-year" oninput="filterBooks()"><br>
+            <label for="filter-author">Author:</label>
+            <input type="text" id="filter-author" oninput="filterBooks()"><br>
+            <label for="filter-language">Language:</label>
+            <input type="text" id="filter-language" oninput="filterBooks()"><br>
+            <label for="filter-publisher">Publisher:</label>
+            <input type="text" id="filter-publisher" oninput="filterBooks()"><br>
+            <label for="filter-subject">Subject:</label>
+            <input type="text" id="filter-subject" oninput="filterBooks()"><br>
         </div>
-        '''
-        return book_html
+        <div class="books-container" id="books"></div>
+        <div class="clear"></div>
 
-    except Exception as e:
-        print(f"Error processing {folder}: {e}")
-        return ""
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {{
+                const booksData = {books_json};
 
-# Generate the complete HTML file
-html_content = '''
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Book Collection</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="filters">
-        <label for="filter-year">Year:</label>
-        <input type="text" id="filter-year" onkeydown="handleFilterKeydown(event)">
-        <label for="filter-author">Author:</label>
-        <input type="text" id="filter-author" onkeydown="handleFilterKeydown(event)">
-        <label for="filter-language">Language:</label>
-        <input type="text" id="filter-language" onkeydown="handleFilterKeydown(event)">
-        <label for="filter-publisher">Publisher:</label>
-        <input type="text" id="filter-publisher" onkeydown="handleFilterKeydown(event)">
-        <label for="filter-subject">Subject:</label>
-        <input type="text" id="filter-subject" onkeydown="handleFilterKeydown(event)">
-    </div>
-    <div id="books">
-'''
+                function loadBooks() {{
+                    const booksContainer = document.getElementById('books');
+                    booksContainer.innerHTML = '';  // Clear any previous book data
+                    booksData.forEach(book => {{
+                        const bookDiv = document.createElement('div');
+                        bookDiv.className = 'book';
+                        bookDiv.dataset.year = book.year;
+                        bookDiv.dataset.author = book.creators.join(', ');
+                        bookDiv.dataset.language = book.language;
+                        bookDiv.dataset.publisher = book.publisher;
+                        bookDiv.dataset.subject = book.subject;
 
-# Add book data to the HTML content
-for folder in book_identifiers:
-    html_content += generate_book_html(folder)
+                        const thumbnail = document.createElement('div');
+                        thumbnail.className = 'thumbnail';
+                        const img = document.createElement('img');
+                        img.src = book.thumbnail_url;
+                        thumbnail.appendChild(img);
 
-# Close the HTML content
-html_content += '''
-    </div>
-    <script>
-        function handleFilterKeydown(event) {
-            if (event.key === "Enter") {
-                filterBooks();
-            }
-        }
+                        const details = document.createElement('div');
+                        details.className = 'details';
+                        details.innerHTML = `<h3>${{book.title}}</h3><p>Author: ${{book.creators.join(', ')}}</p><p>Publisher: ${{book.publisher}}</p><p>Year: ${{book.year}}</p><p>Language: ${{book.language}}</p><p>Subject: ${{book.subject}}</p>`;
 
-        function filterBooks() {
-            const year = document.getElementById('filter-year').value.toLowerCase();
-            const author = document.getElementById('filter-author').value.toLowerCase();
-            const language = document.getElementById('filter-language').value.toLowerCase();
-            const publisher = document.getElementById('filter-publisher').value.toLowerCase();
-            const subject = document.getElementById('filter-subject').value.toLowerCase();
+                        const link = document.createElement('a');
+                        link.href = book.pdf_url;
+                        link.textContent = 'Download';
+                        details.appendChild(link);
 
-            const books = document.querySelectorAll('.book');
-            books.forEach(book => {
-                const bookYear = book.dataset.year.toLowerCase();
-                const bookAuthor = book.dataset.author.toLowerCase();
-                const bookLanguage = book.dataset.language.toLowerCase();
-                const bookPublisher = book.dataset.publisher.toLowerCase();
-                const bookSubject = book.dataset.subject.toLowerCase();
+                        bookDiv.appendChild(thumbnail);
+                        bookDiv.appendChild(details);
 
-                if ((year === '' || bookYear.includes(year)) &&
-                    (author === '' || bookAuthor.includes(author)) &&
-                    (language === '' || bookLanguage.includes(language)) &&
-                    (publisher === '' || bookPublisher.includes(publisher)) &&
-                    (subject === '' || bookSubject.includes(subject))) {
-                    book.style.display = 'flex';
-                } else {
-                    book.style.display = 'none';
-                }
-            });
-        }
-    </script>
-    <footer class="footer">
-        <p class="footer-text">&copy; 2013-2024 ಕನ್ನಡ ಸಂಚಯ | ಸಾಹಿತ್ಯ ಸಂಶೋಧನೆ ಹಾಗೂ ಅಧ್ಯಯನ ವೇದಿಕೆ</p>
-    </footer>
-</body>
-</html>
-'''
+                        booksContainer.appendChild(bookDiv);
+                    }});
+                }}
 
-# Write the generated HTML content to a file
-with open('index.html', 'w', encoding='utf-8') as file:
-    file.write(html_content)
+                function filterBooks() {{
+                    const year = document.getElementById('filter-year').value.toLowerCase();
+                    const author = document.getElementById('filter-author').value.toLowerCase();
+                    const language = document.getElementById('filter-language').value.toLowerCase();
+                    const publisher = document.getElementById('filter-publisher').value.toLowerCase();
+                    const subject = document.getElementById('filter-subject').value.toLowerCase();
 
-print("HTML file generated successfully.")
+                    const books = document.querySelectorAll('.book');
+                    books.forEach(book => {{
+                        const bookYear = book.dataset.year.toLowerCase();
+                        const bookAuthor = book.dataset.author.toLowerCase();
+                        const bookLanguage = book.dataset.language.toLowerCase();
+                        const bookPublisher = book.dataset.publisher.toLowerCase();
+                        const bookSubject = book.dataset.subject.toLowerCase();
+
+                        if ((year === '' || bookYear.includes(year)) &&
+                            (author === '' || bookAuthor.includes(author)) &&
+                            (language === '' || bookLanguage.includes(language)) &&
+                            (publisher === '' || bookPublisher.includes(publisher)) &&
+                            (subject === '' || bookSubject.includes(subject))) {{
+                            book.style.display = 'flex';
+                        }} else {{
+                            book.style.display = 'none';
+                        }}
+                    }});
+                }}
+
+                window.loadBooks = loadBooks;
+                window.filterBooks = filterBooks;
+
+                loadBooks();  // Load books on page load
+            }});
+        </script>
+    </body>
+    </html>
+    """
+
+    with open(output_html, "w", encoding='utf-8') as f:
+        f.write(html_content)
+
+# Specify the path to your JSON file and the desired output HTML file
+json_file = "consolidated_books.json"
+output_html = "index.html"
+generate_html_from_json(json_file, output_html)
