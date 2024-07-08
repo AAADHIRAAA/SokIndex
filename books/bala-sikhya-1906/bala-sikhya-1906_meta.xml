@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <identifier>bala-sikhya-1906</identifier>
+  <alt_title>Bala Sikhya</alt_title>
+  <collection>ServantsOfKnowledge</collection>
+  <collection>JaiGyan</collection>
+  <creator>ଦୟାନିଧି ଦାସ</creator>
+  <creator>Dayanidhi Das</creator>
+  <creator>Dayanidhi Das</creator>
+  <description>"ବାଳଶିକ୍ଷା" ୧୯୦୬ ମସିହାରେ ପ୍ରକାଶିତ ଓ ଦୟାନିଧି ଦାସଙ୍କ ରଚିତ/ସଂକଳିତ ଏକ ଓଡ଼ିଆ ପାଠ୍ୟପୁସ୍ତକ ପୁସ୍ତକ ।
+"Bala Sikhya" is a 1906 textbook authored/compiled by Dayanidhi Das.
+</description>
+  <language>ori</language>
+  <mediatype>texts</mediatype>
+  <scanner>Internet Archive Python library 2.0.3</scanner>
+  <source>Srujanika</source>
+  <subject>ପାଠ୍ୟପୁସ୍ତକ</subject>
+  <subject>textbook</subject>
+  <title>ବାଳଶିକ୍ଷା</title>
+  <year>1906</year>
+  <year>୧୯୦୬</year>
+  <uploader>carl+sok_blr@resource.org</uploader>
+  <publicdate>2021-06-01 08:19:25</publicdate>
+  <addeddate>2021-06-01 08:19:25</addeddate>
+  <identifier-access>http://archive.org/details/bala-sikhya-1906</identifier-access>
+  <identifier-ark>ark:/13960/t6r03kw22</identifier-ark>
+  <imagecount>26</imagecount>
+  <ppi>533</ppi>
+  <ocr>tesseract 5.0.0-alpha-20201231-10-g1236</ocr>
+  <ocr_parameters>-l ori</ocr_parameters>
+  <ocr_module_version>0.0.13</ocr_module_version>
+  <ocr_detected_script>Latin</ocr_detected_script>
+  <ocr_detected_script_conf>1.0000</ocr_detected_script_conf>
+  <ocr_detected_lang>or</ocr_detected_lang>
+  <ocr_detected_lang_conf>1.0000</ocr_detected_lang_conf>
+  <pdf_module_version>0.0.14</pdf_module_version>
+  <coverleaf>0</coverleaf>
+</metadata>
