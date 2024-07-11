@@ -19,6 +19,27 @@ def generate_html_from_json(json_file, output_html):
                 margin: 0;
                 padding: 0;
             }}
+            .header {{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: #f8f8f8;
+                padding: 20px;
+                border-bottom: 1px solid #ddd;
+                text-align: left;
+            }}
+            .header img {{
+                max-height: 100px;
+                margin-right: 20px;
+            }}
+            .header-content {{
+                flex-grow: 1;
+            }}
+            .header-content p {{
+                margin: 0;
+                font-size: 16px;
+                line-height: 1.5;
+            }}
             .container {{
                 display: grid;
                 grid-template-columns: 20% 80%;
@@ -120,6 +141,12 @@ def generate_html_from_json(json_file, output_html):
                 display: block;
                 transition: transform 0.2s;
             }}
+            .book-title {{
+                text-align: center;
+                padding: 10px;
+                font-size: 16px;
+                background-color: #f0f0f0;
+            }}
             .details-tooltip {{
                 position: absolute;
                 top: -90px; 
@@ -166,6 +193,16 @@ def generate_html_from_json(json_file, output_html):
         </style>
     </head>
     <body>
+     <div class="header">
+            <img src="public/servantsofknowledge.png" alt="Servants of knowledge">
+            <div class="header-content">
+                <p><strong>Servants Of Knowledge</strong></p>
+                <p>This library of books, audio, video, and other materials from and about India is curated and maintained by Public Resource. The purpose of this library is to assist the students and the lifelong learners of India in their pursuit of an education so that they may better their status and their opportunities and to secure for themselves and for others justice, social, economic and political.</p>
+                <br>
+                <p>This library has been posted for non-commercial purposes only and facilitates fair dealing usage of academic and research materials for private use including research, for criticism and review of the work or of other works and reproduction by teachers and students in the course of instruction. Many of the books and articles are either unavailable or inaccessible in libraries in India, especially in some of the poorer states and this collection seeks to fill a major gap that exists in access to knowledge.</p>
+                <p>Jai Gyan!</p>
+            </div>
+        </div>
         <div class="container">
             <div class="filters">
     <h2>Filters</h2>
@@ -245,7 +282,7 @@ def generate_html_from_json(json_file, output_html):
 
 
             <div class="search-bar">
-            <input type="text" id="search-books" placeholder="Search..." oninput="filterBooks()">
+            <input type="text" id="search-books" placeholder="Search..." >
             </div>
 
             <div class="books-container" id="books"></div>
@@ -270,6 +307,11 @@ def generate_html_from_json(json_file, output_html):
                         const img = document.createElement('img');
                         img.src = book.thumbnail_url;
                         thumbnail.appendChild(img);
+
+                        const title = document.createElement('div');
+                        title.className = 'book-title';
+                        title.textContent = book.title;
+                        thumbnail.appendChild(title);
 
                         const detailsTooltip = document.createElement('div');
                         detailsTooltip.className = 'details-tooltip';
@@ -339,8 +381,12 @@ def generate_html_from_json(json_file, output_html):
                         img.src = book.thumbnail;
                         img.alt = book.title;
                         thumbnail.appendChild(img);
+                      
+                        const title = document.createElement('div');
+                        title.className = 'book-title';
+                        title.textContent = book.title;
+                        thumbnail.appendChild(title);
                         bookDiv.appendChild(thumbnail);
-
                         const detailsTooltip = document.createElement('div');
                         detailsTooltip.className = 'details-tooltip';
                         detailsTooltip.innerHTML = `
@@ -368,17 +414,18 @@ def generate_html_from_json(json_file, output_html):
                 }}
 
                     function searchBooks() {{
-            const searchQuery = document.getElementById('search-books').value.toLowerCase();
-            const books = document.querySelectorAll('.book');
-            books.forEach(book => {{
-                const bookTitle = book.querySelector('.details h3').textContent.toLowerCase();
-                if (bookTitle.includes(searchQuery)) {{
-                    book.style.display = 'block';
-                }} else {{
-                    book.style.display = 'none';
-                }}
-            }});
-        }}
+                        const searchQuery = document.getElementById('search-books').value.toLowerCase();
+                        const books = document.querySelectorAll('.book');
+                        books.forEach(book => {{
+                            const bookTitle = book.querySelector('.details h3').textContent.toLowerCase();
+                            if (bookTitle.includes(searchQuery)) {{
+                                book.style.display = 'block';
+                            }} else {{
+                                book.style.display = 'none';
+                            }}
+                        }});
+                    }}
+
                 document.querySelectorAll('.filters input[type="checkbox"]').forEach(checkbox => {{
                     checkbox.addEventListener('change', filterBooks);
                 }});
@@ -391,8 +438,18 @@ def generate_html_from_json(json_file, output_html):
                     checkbox.checked = false;
                 }});
                 document.getElementById('search-books').value = '';
-                filterBooks();
+                loadBooks();
             }}
+            document.getElementById('search-books').addEventListener('input',searchBooks);
+
+            document.getElementById('search-books').addEventListener('keydown',function(event){{
+                if(event.key === 'Enter'){{
+                    searchBooks();
+                }}
+            }});
+
+            document.getElementById('clear-filters').addEventListener('click',clearFilters);
+            loadBooks();
         </script>
     </body>
     </html>
